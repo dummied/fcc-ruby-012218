@@ -56,7 +56,9 @@ class Avenger
     to_console(died_at_least_once)
     to_console(still_dead)
     to_console(chance_to_come_back)
+    to_console(gender_breakdown)
     to_console(gender_bias)
+    honor_roll
   end
 
   def self.total_number
@@ -84,12 +86,16 @@ class Avenger
   end
 
   def self.chance_to_come_back
-    "So, if you die, you have a #{percent(died_count - dead_count, died_count)}% chance of coming back."
+    "So, if you die, you have a #{percent_difference(died_count, dead_count)}% chance of coming back."
+  end
+
+  def self.gender_breakdown
+    "The Avengers are "
   end
 
   def self.gender_bias
-    women_percent = percent(died_count(by_gender("female")))
-    men_percent = percent(died_count(by_gender("male")))
+    women_percent = percent(died_count(by_gender("female")), by_gender("female").count)
+    men_percent = percent(died_count(by_gender("male")), by_gender("male").count)
     if women_percent > men_percent
       "If you're a female member of the Avengers, you are #{percent_difference(women_percent, men_percent)}% more likely to die."
     elsif men_percent > women_percent
@@ -99,13 +105,25 @@ class Avenger
     end
   end
 
+  def self.honor_roll
+    puts "The following Avengers remain dead (for now, as of 2015, and as far as official Avengers records are concerned):"
+    avengers.select{ |a| a.currently_deceased? }.each do |avenger|
+      puts avenger.name
+      sleep 1
+      puts avenger.notes
+      sleep 2
+      puts "\n"
+    end
+  end
+
   def self.percent_difference(cohort_one, cohort_two)
-    percent(cohort_two - cohort_one, cohort_one)
+    percent(cohort_one - cohort_two, cohort_one)
   end
 
 
   def self.to_console(string)
-    puts string
+    puts string + "\n\n"
+    sleep 0.5
   end
 
   def self.percent(number_to_compare, base=avengers.count)
