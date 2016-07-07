@@ -12,11 +12,10 @@ class AvengersController < ApplicationController
     @avenger = Avenger.new
   end
 
-
   private
 
   def avenger_params
-    params.require(:avenger).permit(:name, :alias_list)
+    params.require(:avenger).permit(:name, :alias_list, :gender)
   end
 
 end
