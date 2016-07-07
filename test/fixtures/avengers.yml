@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  appearances: 1
+  current: false
+  gender: MyString
+  probationary_introduction: 2016-07-06
+  full_introduction: 2016-07-06
+  honorary: false
+  notes: MyText
+  alive: false
+  died_times: 1
+  return_times: 1
+  wiki_url: MyString
+
+two:
+  name: MyString
+  appearances: 1
+  current: false
+  gender: MyString
+  probationary_introduction: 2016-07-06
+  full_introduction: 2016-07-06
+  honorary: false
+  notes: MyText
+  alive: false
+  died_times: 1
+  return_times: 1
+  wiki_url: MyString

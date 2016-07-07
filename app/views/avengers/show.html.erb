@@ -1,0 +1,7 @@
+<h1><%= @avenger.name %></h1>
+
+<p><strong>Aliases:</strong> <%= aliases_links(@avenger).html_safe %></p>
+
+<p><strong>Status:</strong> <%= @avenger.alive? ? "Alive" : "Deceased" %></p>
+
+<p><strong>Notes:</strong> <%= @avenger.notes %></p>

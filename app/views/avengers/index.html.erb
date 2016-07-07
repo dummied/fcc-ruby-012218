@@ -1,0 +1,22 @@
+<h1>Avengers all-time roster</h1>
+
+<table class="table table-striped">
+  <tr>
+    <th>Name</th>
+    <th>Aliases</th>
+    <th>Gender</th>
+    <th>Year Introduced</th>
+    <th>Status</th>
+  </tr>
+<% @avengers.each do |avenge| %>
+  <tr>
+    <td><strong><%= link_to avenge.name, avenge %></strong></td>
+    <td><%= aliases_links(avenge).html_safe %></td>
+    <td><%= avenge.gender %></td>
+    <td><%= avenge.year %></td>
+    <td class="<%= avenge.alive? ? "bg-success" : "bg-danger" %>"><%= avenge.alive? ? "Alive" : "Deceased" %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= paginate @avengers %>

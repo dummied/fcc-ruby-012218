@@ -1,0 +1,7 @@
+<h1><%= @alias.name %></h1>
+
+<ul class="list-unstyled">
+  <% @avengers.each do |avenge| %>
+    <li><%= link_to avenge.name, avenge %></li>
+  <% end %>
+</ul>

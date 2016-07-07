@@ -1,0 +1,6 @@
+<h1>Add a new Avenger</h1>
+<%= simple_form_for @avenger do |f| %>
+  <%= f.input :name %>
+  <%= f.input :alias_list %>
+  <%= f.submit "Assemble!", class: 'btn btn-primary btn-large' %>
+<% end %>
