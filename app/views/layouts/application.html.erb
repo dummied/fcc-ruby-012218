@@ -27,6 +27,11 @@
     </div><!-- /.container-fluid -->
   </nav>
   <div class="container">
+    <% if flash.any? %>
+      <% flash.each do |key, message| %>
+        <div class="alert alert-<%= key %>"><%= message %></div>
+      <% end %>
+    <% end %>
     <%= yield %>
   </div>
 
