@@ -27,6 +27,9 @@ gem 'bootstrap-sass'
 gem 'kaminari'
 gem 'kaminari-bootstrap', '~> 3.0.1'
 gem 'simple_form'
+gem 'pry-rails'
+gem 'puma'
+gem 'chartkick'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
