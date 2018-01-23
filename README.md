@@ -20,8 +20,8 @@ If you're on Linux ... I'm going to assume you know what you're doing.
 
 ### Getting the initial app
 
-If you have git installed, you can find the git repo here <repo_url> and
-are a `git clone <repo>` away.
+If you have git installed, you can find the git repo here <https://github.com/dummied/fcc-ruby-012218> and
+are a `git clone https://github.com/dummied/fcc-ruby-012218.git` away.
 
 If not, you'll need to download the project - you should be able to find
 a link for that on GitHub as well.
